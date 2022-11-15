@@ -1,8 +1,6 @@
 package com.springboot.api.controller;
 
 import com.springboot.api.dto.MemberDto;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,16 +44,6 @@ public class GetController {
         return var;
     }
 
-    // http://localhost:8080/api/v1/get-api/request2?name=flature&email=thinkground.flature@gmail.com&organization=thinkground
-    @ApiOperation(value = "GET 메소드 예제", notes = "@RequestParam을 활용한 GET Method")
-    @GetMapping(value = "/request1")
-    public String getRequestParam1(
-        @ApiParam(value = "이름", required = true) @RequestParam String name,
-        @ApiParam(value = "이메일", required = true) @RequestParam String email,
-        @ApiParam(value = "회사", required = true) @RequestParam String organization) {
-        return name + " " + email + " " + organization;
-    }
-
     // http://localhost:8080/api/v1/get-api/request2?key1=value1&key2=value2
     @GetMapping(value = "/request2")
     public String getRequestParam2(@RequestParam Map<String, String> param) {
@@ -68,10 +56,4 @@ public class GetController {
         return sb.toString();
     }
 
-    // http://localhost:8080/api/v1/get-api/request3?name=value1&email=value2&organization=value3
-    @ApiOperation(value = "GET 메소드 예제", notes = "DTO를 활용한 GET Method")
-    @GetMapping(value = "/request3")
-    public String getRequestParam3(MemberDto memberDTO) {
-        return memberDTO.toString();
-    }
 }

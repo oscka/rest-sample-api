@@ -16,7 +16,7 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <name>api</name>
-  <description>rest-sample-api</description>
+  <description>chapter5_api</description>
 
   <properties>
     <java.version>11</java.version>
